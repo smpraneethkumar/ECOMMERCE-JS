@@ -1,5 +1,6 @@
 .home-header{
     display: grid;
+    position: sticky;
 }
 .banner{
     margin-top: 900px;
@@ -7,4 +8,8 @@
 
 .middel{
     text-align: center;
+}
+.heart{
+    color: red;
+    
 }
