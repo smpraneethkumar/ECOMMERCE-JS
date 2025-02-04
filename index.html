@@ -17,14 +17,14 @@
             crossorigin="anonymous"
         />
     </head>
-
+  
     <body>
         <!-- creating the nav bar starts -->
-        <div class="home-header container">
-           <div class="row">
+        <div class=" container home-header">
+           <div class="  rowf">
             <h3 class="col-4">Ecommerce</h3>
             <div class="col-4">
-                <ul class="nav justify-content-center">
+                <ul class="nav ">
                     <li class="nav-item">
                       <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                     </li>
@@ -40,18 +40,18 @@
                 </ul>    
             </div>
             <div class="col-4">
-                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="login.html"> Login</a></button>
-                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="register.html">Register</a></button>
-                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="">Cart(0)</a></button>
+                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="login.html"><ion-icon name="log-in-outline"></ion-icon> Login</a></button>
+                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="register.html"> <ion-icon name="person-add-outline"></ion-icon>Register</a></button>
+                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="add-to-cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(0)</a></button>
             </div>
            </div>
         </div>
-        <!-- creating the nav bar ends --><ion-icon name="log-in-outline"></ion-icon>
-                                          <ion-icon name="person-add-outline"></ion-icon>
-                                          <ion-icon name="cart-outline"></ion-icon>  
+        <!-- creating the nav bar ends -->
+                                          
+                                           
         <!-- the banner is starts -->
         <div class="card text-bg-dark">
-                <img src="./main.png.jpg" class="card-img" alt="...">
+                <!-- <img src="./main.png.jpg" class="card-img" alt="..."> -->
             <div class="card-img-overlay banner">
                 <h5 class="card-title display-4">New Season Arrivals</h5>
                 <h5 class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a litter bit longer.</h5>
@@ -66,17 +66,29 @@
             </div>
 
          <!-- the banner is ends -->
+           <!-- category button starts -->
+           <div class="five-btn">
+            <button type="button" class="btn btn-outline-dark" id="all">All</button>
+            <button type="button" class="btn btn-outline-dark" id="men">Men's Clothing</button>
+            <button type="button" class="btn btn-outline-dark" id="women">Woman's Clothing</button>
+            <button type="button" class="btn btn-outline-dark" id="jew">Jewelery</button>
+            <button type="button" class="btn btn-outline-dark" id="ele">Electronics</button>
+         </div>
+        <!-- category button ends -->
             <!-- the index all images starts -->
          
             <div class="container">
-                <div class="row">
+
+                <div class="row" >
 
                 </div>
                 
             </div>
           
             <!-- the index all images starts -->
-<hr>
+               
+
+                <button id="click">click me </button>
         
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
