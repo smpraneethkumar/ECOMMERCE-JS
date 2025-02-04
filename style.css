@@ -1,6 +1,7 @@
 .home-header{
+    /* background-color: rgb(151, 149, 149); */
     display: grid;
-    position: sticky;
+    position: static;
 }
 .banner{
     margin-top: 900px;
@@ -18,3 +19,13 @@
 /* .center{
     padding-left: 900px;
 } */
+
+/* in index styling for the images */
+/* .rowdd{
+    display: flex;
+} */
+
+/* five button  */
+.five-btn{
+   text-align: center;
+}
