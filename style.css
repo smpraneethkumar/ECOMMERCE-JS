@@ -1,14 +1,19 @@
 .home-header{
     /* background-color: rgb(151, 149, 149); */
     display: grid;
-    position: static;
+    position: fixed;
+    padding: 15px;
+    position: relative;
 }
 .banner{
-    margin-top: 900px;
+   position: relative;
+   margin-top: 200px;
+   margin-left: 70px;
 }
 
 .middel{
     text-align: center;
+    
 }
 .heart{
     /* border:  solid red; */

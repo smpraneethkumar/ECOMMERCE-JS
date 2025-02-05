@@ -1,3 +1,6 @@
+
+///////////////////// =============>for cart we can us the reduce method for more information see the video <================== //////////////////////////
+
 // index page images insert and edit all the images starts
 
 
@@ -98,20 +101,20 @@
 // const iImages = document.getElementById("indexImg")
 
 
-const ele = document.getElementsByClassName(".container")
-fetchData()
-async function fetchData() {
-    const response = await fetch ("https://fakestoreapi.com/products")
-    const data = await response.json()
-    console.log(data);
+// const ele = document.getElementsByClassName(".container")
+// fetchData()
+// async function fetchData() {
+//     const response = await fetch ("https://fakestoreapi.com/products")
+//     const data = await response.json()
+//     console.log(data);
     
 
-    data.forEach ((currObj)=>{
-        const list =`<h1>${currObj.price}</h1>`
+//     data.forEach ((currObj)=>{
+//         const list =`<h1>${currObj.price}</h1>`
        
-        list.
-    })
-}
+//         list.
+//     })
+// }
 
 
 
