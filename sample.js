@@ -1,4 +1,4 @@
-let row = document.querySelector(".row");
+let row = document.querySelector(".homeProduct");
 
 
 
@@ -20,22 +20,24 @@ async function fetchData (){
     function createcards(source){
       var image =""
     source.forEach((currObj) => {
-      let x =  `
-       <div class="card  col-4" style="width: 50px;  display:grid; margin:7px;text-align: center;">
-      <img src="${currObj.image}"alt="iamges is not getting">
-         
-        <h5 class="card-title" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h5>
-        <p class="card-text" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p><hr>
-        <p>${currObj.price} </p>
-      </div><hr>
-      <div class="card-body">
-       <button type="button" class="btn btn-dark details " data-id="${currObj.id}">Details</button>
-       <button type="button" class="btn btn-dark">Add to Cart</button>
-      </div>
-    </div>`
+    let x = 
+    `
+    
+     <div  style="border: 1px solid gray; border-radius: 5px; width: 430px;text-align: center;height: 480px; ">
+        <img src="${currObj.image}" alt="" style="width: 250px;height: 270px;">
+        <h4 class="dis" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h4>
+        <p style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p>
+        <hr>
+        <p>$659</p>
+        <hr>
+            <button class="details" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;"  data-id="${currObj.id}">Details</button>
+            <button style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
+    </div>
+    `
     image+=x;
   })
       row.innerHTML=image;
+
       let detailsBtn = document.querySelectorAll(".details")
       detailsBtn.forEach((deBtn)=>{
         deBtn.addEventListener("click",(e)=>{
@@ -46,7 +48,7 @@ async function fetchData (){
                  console.log(localStorage.getItem("id"));          
                 window.location.href="./product.html";
                 })
-        
+          
               })
 
  }

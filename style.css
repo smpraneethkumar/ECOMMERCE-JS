@@ -6,6 +6,7 @@
    
     position: relative;
     z-index: 1000;
+    
 }
 .Nav-bar{
     position: sticky;
@@ -17,14 +18,13 @@
    
 }
 
-.middel{
-    text-align: center;
-    
-}
+
 .heart{
     /* border:  solid red; */
     color: red;
     /* background-color: red; */
+    
+    
     
 }
 /* .center{
@@ -39,4 +39,10 @@
 /* five button  */
 .five-btn{
    text-align: center;
+}
+.line{
+  
+    text-align: center;
+   
+  
 }

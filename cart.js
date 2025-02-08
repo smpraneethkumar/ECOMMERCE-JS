@@ -10,3 +10,20 @@ let defDisplay = `
 </div>`
 
 console.log(defDisplay);
+
+let itemList = document.getElementById("itemList")
+
+
+let itemData = []
+
+async function fetchDataforProd() {
+    const response = await fetch ("https://fakestoreapi.com/products")
+    const data = await response.json()
+    console.log(data);
+    
+    data.map((ele)=>{
+        itemData.push(ele);
+    })
+    
+}
+fetchDataforProd()
