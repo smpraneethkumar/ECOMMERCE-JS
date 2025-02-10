@@ -16,9 +16,39 @@
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
         />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     </head>
 
     <body>
+      <!-- creating the nav bar starts -->
+      <div class=" container home-header">
+        <div class="  rowf" style="display: flex ;">
+         <h3 class="col-4">Ecommerce</h3>
+         <div class="col-4">
+             <ul class="nav">
+                 <li class="nav-item">
+                   <a class="nav-link active " aria-current="page" href="index.html">Home</a>
+                 </li>
+                 <li class="nav-item ">
+                     <a  data-id="details" id="productpage" class="nav-link active" aria-current="page" href="product.html">Product</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                   </li>
+                   <li class="nav-item">
+                     <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                   </li>
+             </ul>    
+         </div>  
+         <div class="col-4">
+             <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="login.html"><ion-icon name="log-in-outline"></ion-icon> Login</a></button>
+             <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="register.html"> <ion-icon name="person-add-outline"></ion-icon>Register</a></button>
+             <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="add-to-cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(0)</a></button>
+         </div>
+        </div>
+     </div><br><br><br>
+     <!-- creating the nav bar ends -->
+
          <!-- the register from is starts -->
          <div  style="padding-left: 600px;">
             <form action="" class="center" >
@@ -40,6 +70,8 @@
             </div>      
               <button type="button" class="btn btn-secondary" style=" margin-left: 730px;">Login</button>
         <!-- the register from is ends -->
+              <br><br><br>
+        <p class="text-secondary" style="text-align: center;">Made with <i class="fa-solid fa-heart heart" ></i> by <u>PRANEETH KUMAR SM</u> </p>
 
         
         <script

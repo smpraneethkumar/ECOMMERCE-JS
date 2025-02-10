@@ -112,7 +112,7 @@ function productDetailsData (data){
                       <h4>${singleData[0].price}</h4>
                       <p style="color: gray;">${singleData[0].description}</p>
                       <button type="button" class="btn btn-light details "data-id="${singleData.id}">Add to Cart</button>
-                      <button type="button" class="btn btn-dark">Go to Cart</button>
+                      <button type="button" class="btn btn-dark"><a href="./cart.html">Go to Cart</a></button>
               </div> 
               
       </div>        

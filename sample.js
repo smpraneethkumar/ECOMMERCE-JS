@@ -1,9 +1,5 @@
 let row = document.querySelector(".homeProduct");
 
-
-
-
-
 let data1 = []
 
 async function fetchData (){
@@ -22,7 +18,6 @@ async function fetchData (){
     source.forEach((currObj) => {
     let x = 
     `
-    
      <div  style="border: 1px solid gray; border-radius: 5px; width: 430px;text-align: center;height: 480px; ">
         <img src="${currObj.image}" alt="" style="width: 250px;height: 270px;">
         <h4 class="dis" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h4>
@@ -31,7 +26,7 @@ async function fetchData (){
         <p>$659</p>
         <hr>
             <button class="details" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;"  data-id="${currObj.id}">Details</button>
-            <button style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
+            <button  data-id="addData" class="addToCart" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
     </div>
     `
     image+=x;
@@ -43,13 +38,25 @@ async function fetchData (){
         deBtn.addEventListener("click",(e)=>{
            let id = e.target.dataset.id 
             console.log(e);
+
            
                  localStorage.setItem("id",id)
                  console.log(localStorage.getItem("id"));          
                 window.location.href="./product.html";
                 })
-          
               })
+              // for add  to cart btn
+              let addBtn = document.querySelectorAll(".addToCart");
+              addBtn.forEach((addEle)=>{
+                addEle.addEventListener("click",(e)=>{
+                   let add = e.target.dataset.cart
+                  
+                   
+                })
+              })
+            
+              
+
 
  }
 
@@ -94,24 +101,6 @@ let menbtn = document.getElementById("men");
       let ele = data1.filter(ele=>ele.category=="electronics")
       createcards(ele)
     })  ;
-
-    // setting data into localstorage 
-    // localStorage.setItem("source",)
-
-
-    // ----for details button 
-    // let detaBtn = document.getElementsByClassName("details")
-
-    //   detaBtn.addEventListener("click",(e)=>{
-
-    //         console.log("the button wass  clicked!");
-            
-    //   });
-
-    
-    // let dbtn = `${data1.title}`
-
-    // console.log(dbtn);
 
 
     let productpage = document.getElementById("productpage")
