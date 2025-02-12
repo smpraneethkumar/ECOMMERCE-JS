@@ -2,7 +2,7 @@ let maindiv = document.querySelector(".allProduct");
 let onclickDetails = document.querySelector(".onclickDetails")
 let PPdetails = document.querySelector(".PPdetails")
 
-
+ 
 let id = localStorage.getItem("id")
 let dataPro = []
 
@@ -17,10 +17,11 @@ async  function fetchDataforProd (){
    
     if(id=="details"){
      createcards(data)
-     page_product()
+    
     }
    else{ 
        productDetailsData(data)
+       
    }
 }
 
@@ -83,8 +84,8 @@ function createcards(source){
         <hr>
         <p>$659</p>
         <hr>
-            <button class="details" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;"  data-id="${currObj.id}">Details</button>
-            <button style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
+            <button  class="details" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;"  data-hh="${currObj.id}" >Details</button>
+            <button  data-id="${currObj.id}" data-image="${currObj.image}" data-price="${currObj.price}" data-title="${currObj.title}"class="addToCart" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
     </div>
 
      `
@@ -93,6 +94,8 @@ function createcards(source){
   image+=x;
 })
    maindiv.innerHTML=image;
+   let cartBtns =document.querySelectorAll(".addToCart")
+   addtocart(cartBtns)
 }
 
 function productDetailsData (data){
@@ -115,8 +118,8 @@ function productDetailsData (data){
                       <p>${singleData[0].rate}</p>
                       <h4>${singleData[0].price}</h4>
                       <p style="color: gray;">${singleData[0].description}</p>
-                      <button type="button" class="btn btn-light details "data-id="${singleData.id}">Add to Cart</button>
-                      <button type="button" class="btn btn-dark"><a href="./cart.html">Go to Cart</a></button>
+                      <button  type="button" class="btn btn-light details "data-id="${singleData.id}">Add to Cart</button>
+                      <button  type="button" class="btn btn-dark"><a href="./cart.html">Go to Cart</a></button>
               </div> 
               
       </div>        
@@ -129,33 +132,65 @@ function productDetailsData (data){
 
 
  let cart={}
-  let count=0;
-  // for add  to cart btn
- 
-  if(localStorage.getItem("cart")){
-    cart=JSON.parse(localStorage.getItem("cart"))
-  }
-  if(localStorage.getItem("count")){
-    count=parseInt(localStorage.getItem("count"))
-  }
-  
-  
-  //when we cilck the details in the product page we will get details of it
+ let count=0;
+ // for add  to cart btn
 
-  // let detailsBtn = document.querySelectorAll(".details")
-  //     detailsBtn.forEach((deBtn)=>{
-  //       deBtn.addEventListener("click",(e)=>{
-  //          let id = e.target.dataset.id
+ if(localStorage.getItem("cart")){
+   cart=JSON.parse(localStorage.getItem("cart"))
+ }
+ if(localStorage.getItem("count")){
+   count=parseInt(localStorage.getItem("count"))
+ } 
+ updatecart()
 
-  //          localStorage.setItem("id",id) 
-  //          console.log(localStorage.getItem("id"));          
-  //        // window.location.href="./product.html";
-  //         })
-  //       })
+ function addtocart(addBtn){
+     addBtn.forEach((ele)=>{
+       ele.addEventListener("click",(e)=>{
+         let Id = e.target.dataset.id;
+         let Image = e.target.dataset.image;
+         let Title = e.target.dataset.title;
+         let Price = e.target.dataset.price;
+     
+         if(Id in cart){
+           cart[Id].qty++
+         }
+       else{
+         cartItems={
+             id:Id,
+             image:Image,
+             title:Title,
+             price:Price,
+             qty:1
+         }
+         cart[Id]=cartItems
+         count =count+1
+     
+         console.log(cart);
+         
+       }
+       localStorage.setItem("cart",JSON.stringify(cart))
+     
+       // let cartCount = localStorage.getItem("count")
+       updatecart()
+       
+   
+       })
+     })
+}    
 
-function page_product (){
-  
-  productDetailsData(data)
+function updatecart(){ 
+ document.querySelector(".cartValue").innerText=count
+ localStorage.setItem("count",count)
 }
 
+
+let detailsBtn = document.querySelectorAll(".details")
+detailsBtn.forEach((deBtn)=>{
+  deBtn.addEventListener("click",(e)=>{
+     let id = e.target.dataset.id
    
+    })
+  })
+  let hh = e.target.dataset.hh  
+  console.log(hh);
+  

@@ -43,29 +43,14 @@ async function fetchData (){
       detailsBtn.forEach((deBtn)=>{
         deBtn.addEventListener("click",(e)=>{
            let id = e.target.dataset.id
-           
-
-           
+                    
                  localStorage.setItem("id",id) 
                  console.log(localStorage.getItem("id"));          
                 window.location.href="./product.html";
                 })
               })
-
-                 
-
-           
               
-              
-               
-            
-              
-
-
  }
-
-
-    
 
     // for all button
     let allbtn = document.getElementById("all");
