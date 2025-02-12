@@ -1,6 +1,6 @@
 let maindiv = document.querySelector(".allProduct");
 let onclickDetails = document.querySelector(".onclickDetails")
-
+let PPdetails = document.querySelector(".PPdetails")
 
 
 let id = localStorage.getItem("id")
@@ -17,6 +17,7 @@ async  function fetchDataforProd (){
    
     if(id=="details"){
      createcards(data)
+     page_product()
     }
    else{ 
        productDetailsData(data)
@@ -68,6 +69,8 @@ let menbtn = document.getElementById("men");
 // for five buttons funcations ends
 
 
+
+
 function createcards(source){
     var image =""
   source.forEach((currObj) => {
@@ -100,6 +103,7 @@ function productDetailsData (data){
   singleData[0].id
 
   let oneProductDetails  =  
+  
       `
     <div style="display:flex;">      
       <div class="container" style="width:50%; height: 200px; width:500px"> 
@@ -121,5 +125,37 @@ function productDetailsData (data){
  }
 
 
+
+
+
+ let cart={}
+  let count=0;
+  // for add  to cart btn
+ 
+  if(localStorage.getItem("cart")){
+    cart=JSON.parse(localStorage.getItem("cart"))
+  }
+  if(localStorage.getItem("count")){
+    count=parseInt(localStorage.getItem("count"))
+  }
+  
+  
+  //when we cilck the details in the product page we will get details of it
+
+  // let detailsBtn = document.querySelectorAll(".details")
+  //     detailsBtn.forEach((deBtn)=>{
+  //       deBtn.addEventListener("click",(e)=>{
+  //          let id = e.target.dataset.id
+
+  //          localStorage.setItem("id",id) 
+  //          console.log(localStorage.getItem("id"));          
+  //        // window.location.href="./product.html";
+  //         })
+  //       })
+
+function page_product (){
+  
+  productDetailsData(data)
+}
 
    

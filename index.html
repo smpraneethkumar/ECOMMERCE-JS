@@ -29,7 +29,7 @@
                       <a class="nav-link active " aria-current="page" href="index.html">Home</a>
                     </li>
                     <li class="nav-item ">
-                        <a  data-id="details" id="productpage" class="nav-link active" aria-current="page" href="product.html">Product</a>
+                        <a  data-id="details" id="productpage" class="nav-link active" aria-current="page" href="./product.html">Product</a>
                       </li>
                       <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="about.html">About</a>
@@ -42,7 +42,7 @@
             <div class="col-4">
                 <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="login.html"><ion-icon name="log-in-outline"></ion-icon> Login</a></button>
                 <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="register.html"> <ion-icon name="person-add-outline"></ion-icon>Register</a></button>
-                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="add-to-cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(0)</a></button>
+                <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="./cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(<span ></span>)</a></button>
             </div>
            </div>
         </div>
@@ -82,10 +82,12 @@
 
                 </div>
                 
-           
-            <!-- the index all images ends -->
-               
-
+<!--            
+     
+                <script>
+                    let cartValue = document.querySelector("span").innerHTML=localStorage.getItem("count")
+                 </script>    -->
+      
         
         <script
             src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -102,6 +104,6 @@
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
         <!-- <script src="script.js"></script> -->
-        <script src="sample.js"></script>
+        <script src="./sample.js"></script>
     </body>
 </html>

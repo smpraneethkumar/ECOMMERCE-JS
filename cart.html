@@ -9,6 +9,7 @@
     rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
     crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <link rel="stylesheet" href="./style.css">
 </head>
 <body>
@@ -35,12 +36,32 @@
                  <div class="col-4">
                      <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="login.html"><ion-icon name="log-in-outline"></ion-icon> Login</a></button>
                      <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="register.html"> <ion-icon name="person-add-outline"></ion-icon>Register</a></button>
-                     <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="add-to-cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(0)</a></button>
+                     <button type="button" class="btn btn-outline-dark"><a class="nav-link active" aria-current="page" href="cart.html"> <ion-icon name="cart-outline"></ion-icon> Cart(<span id="addProduct"></span>)</a></button>
                  </div>
                 </div>
              </div>
              <!-- creating the nav bar ends -->
-     
+
+
+             <div class="container" style="display: flex;" >
+              
+              <div class="mainCart" style="width: 70%;margin-right: 122px;">
+                <h4 style="border:1px solid rgb(222, 219, 219); margin:0px; background:rgb(222, 219, 219);">Cart Items</h4>
+                <div class="oneProductItemsinCart" >
+
+                </div>
+             </div>
+             <div class="forsummary">
+                 
+             </div>
+             </div>
+             
+
+              <script>
+              let cartValue = document.querySelector("span").innerHTML=localStorage.getItem("count")
+
+           </script>   
+
 
     
 

@@ -1,5 +1,5 @@
 let row = document.querySelector(".homeProduct");
-
+let cartValue = document.querySelector("span");
 let data1 = []
 
 async function fetchData (){
@@ -23,37 +23,41 @@ async function fetchData (){
         <h4 class="dis" style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.title}</h4>
         <p style="overflow:hidden; text-overflow:ellipsis; white-space:nowrap;">${currObj.description}</p>
         <hr>
-        <p>$659</p>
+        <p>$${currObj.price}</p>
         <hr>
-            <button class="details" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;"  data-id="${currObj.id}">Details</button>
-            <button  data-id="addData" class="addToCart" style="padding: 10px;padding-left: 20px;padding-right:20px;color:white;background-color: black; border: 0cap;border-radius: 3px;text-align: center;font-size: medium;" >Add to Cart</button>
-    </div>
+        <button class="details" style="padding:10px;padding-left:20px;padding-right:20px;color:white;background-color: black; border:0cap;border-radius:3px;text-align:center;font-size:medium;"  data-id="${currObj.id}">Details</button>
+        <button  data-id="${currObj.id}" data-image="${currObj.image}" data-price="${currObj.price}" data-title="${currObj.title}" class="addToCart" style="padding:10px;padding-left:20px;padding-right:20px;color:white;background-color:black; border:0cap;border-radius:3px;text-align: center;font-size: medium;" >Add to Cart</button>
+      </div>
     `
     image+=x;
   })
+ 
       row.innerHTML=image;
 
+      let addBtn = document.querySelectorAll(".addToCart");  
+     
+     addtocart(addBtn)
+      
+      
       let detailsBtn = document.querySelectorAll(".details")
       detailsBtn.forEach((deBtn)=>{
         deBtn.addEventListener("click",(e)=>{
-           let id = e.target.dataset.id 
-            console.log(e);
+           let id = e.target.dataset.id
+           
 
            
-                 localStorage.setItem("id",id)
+                 localStorage.setItem("id",id) 
                  console.log(localStorage.getItem("id"));          
                 window.location.href="./product.html";
                 })
               })
-              // for add  to cart btn
-              let addBtn = document.querySelectorAll(".addToCart");
-              addBtn.forEach((addEle)=>{
-                addEle.addEventListener("click",(e)=>{
-                   let add = e.target.dataset.cart
-                  
-                   
-                })
-              })
+
+                 
+
+           
+              
+              
+               
             
               
 
@@ -109,9 +113,58 @@ productpage.addEventListener("click",(e)=>{
     localStorage.setItem("id",e.target.dataset.id)
 })
     
+
+  let cart={}
+  let count=0;
+  // for add  to cart btn
+ 
+  if(localStorage.getItem("cart")){
+    cart=JSON.parse(localStorage.getItem("cart"))
+  }
+  if(localStorage.getItem("count")){
+    count=parseInt(localStorage.getItem("count"))
+  } 
+  updatecart()
+
+  function addtocart(addBtn){
+      addBtn.forEach((ele)=>{
+        ele.addEventListener("click",(e)=>{
+          let Id = e.target.dataset.id;
+          console.log(Id);
+          
+          let Image = e.target.dataset.image;
+          let Title = e.target.dataset.title;
+          let Price = e.target.dataset.price;
+      
+          if(Id in cart){
+            cart[Id].qty++
+          }
+        else{
+          cartItems={
+              id:Id,
+              image:Image,
+              title:Title,
+              price:Price,
+              qty:1
+          }
+          cart[Id]=cartItems
+          count =count+1
+      
+          console.log(cart);
+          
+        }
+        localStorage.setItem("cart",JSON.stringify(cart))
+      
+        // let cartCount = localStorage.getItem("count")
+        updatecart()
+        
     
-   
+        })
+      })
+}    
 
-
-
+function updatecart(){ 
+  cartValue.innerText=count
+  localStorage.setItem("count",count)
+}
  
