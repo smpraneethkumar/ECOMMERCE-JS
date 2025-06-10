@@ -4,17 +4,9 @@ let emptyText = document.querySelector(".emptyText")
 let oneProductItemsinCart = document.querySelector(".oneProductItemsinCart")
 
 
-
-
-
-
-
-
 let cart =JSON.parse(localStorage.getItem("cart"))
 let count =localStorage.getItem("count")
 console.log(cart);
-
-
 
 
 let itemData = []
@@ -26,24 +18,16 @@ async function fetchDataforProd() {
     data.map((ele)=>{
         itemData.push(ele);
     })
-
-
     if(count==0){
         empty()
    }
    else{
     
        cartproducts(cart,data)
-       
-       
-   }
-
-    
+            
+   }   
 }
 fetchDataforProd()
-
-
-
 
 function empty(){
     let defDisplay = `

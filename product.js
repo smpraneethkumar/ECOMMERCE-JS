@@ -124,6 +124,7 @@ function productDetailsData (data){
               
       </div>        
       `
+       
       onclickDetails.innerHTML=oneProductDetails;
  }
 

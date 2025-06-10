@@ -86,7 +86,7 @@ let menbtn = document.getElementById("men");
     // for electronic button
     let elebtn = document.getElementById("ele");
 
-    elebtn.addEventListener("click",()=>{
+    elebtn.addEventListener("click",()=>{  
       let ele = data1.filter(ele=>ele.category=="electronics")
       createcards(ele)
     })  ;
